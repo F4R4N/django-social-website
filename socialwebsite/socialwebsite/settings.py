@@ -36,8 +36,8 @@ LOGOUT_URL = 'logout'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'pythontestsendingemail@gmail.com'
-EMAIL_HOST_PASSWORD = 'farantgh1224'
+EMAIL_HOST_USER = 'myemail@gmail.com'
+EMAIL_HOST_PASSWORD = 'my password'
 
 # Application definition
 
@@ -92,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'socialwebsite',
         'USER': 'blog',
-        'PASSWORD': 'faran', 
+        'PASSWORD': 'mypassword', 
         'PORT': 5432, 
     }
 }
