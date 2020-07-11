@@ -26,9 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# login url config
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -83,6 +80,7 @@ DATABASES = {
         'USER': 'blog',
         'PASSWORD': os.environ.get('SERVERPASS'),
         'PORT': 5432,
+
     }
 }
 
