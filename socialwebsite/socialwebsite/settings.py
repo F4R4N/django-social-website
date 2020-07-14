@@ -24,13 +24,7 @@ SECRET_KEY = '**@t*w8cf+)b1!6^m#!90v4g)g(0%%y%jxd1bxkbh6_jj0lb11'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
-# login url config
-LOGIN_REDIRECT_URL = 'dashboard'
-LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
+ALLOWED_HOSTS = ['faran.com', 'www.faran.com', '127.0.0.1']
 
 # Application definition
 
@@ -43,6 +37,9 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.postgres',
+    'social_django',
+    'images.apps.ImagesConfig',
+
 
 ]
 
@@ -52,6 +49,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # use to display a messages in different kinds (stored in cookies by default)
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -107,6 +105,16 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+# custom authentication backends
+AUTHENTICATIONS_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+    'social_core.backends.google.GoogleOAuth2',
+
+]
+# google login apis
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '304800262197-0bfm1okd55eq7vt0julsnppea4abkmr7.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'JHfm7_FWwfKEc3iJZfOyuUrP'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
