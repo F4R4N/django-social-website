@@ -84,6 +84,7 @@ DATABASES = {
         'USER': 'blog',
         'PASSWORD': os.environ.get('SERVERPASS'),
         'PORT': 5432,
+        'HOST': 'localhost',
 
     }
 }

@@ -6,7 +6,7 @@ import datetime
 
 def user_path(instance, filename):
     date = str(datetime.date.today())
-    return 'images/{0}/{1}/{2}'.format(date, instance.user.username, filename)
+    return 'images/{0}/{1}/'.format(date, filename)
 
 
 class Images(models.Model):
